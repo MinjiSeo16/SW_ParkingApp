@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".View_user_doubleparking">
+
+    <TextView
+        android:id="@+id/userInfoTextView"
+        android:layout_width="364dp"
+        android:layout_height="672dp"
+        android:scrollbars="vertical"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/button22"
+        android:layout_width="117dp"
+        android:layout_height="48dp"
+        android:text="@string/Backgo" />
+
+</RelativeLayout>

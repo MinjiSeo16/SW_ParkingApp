@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="267dp"
+        android:layout_height="44dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        tools:ignore="MissingConstraints,TextContrastCheck,TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="192dp" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="263dp"
+        android:layout_height="51dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/number"
+        android:inputType="phone"
+        tools:ignore="MissingConstraints,TextContrastCheck"
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="320dp" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="149dp"
+        android:layout_height="54dp"
+        android:text="@string/login"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="515dp"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>

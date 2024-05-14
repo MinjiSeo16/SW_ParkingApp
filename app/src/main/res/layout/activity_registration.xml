@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="306dp"
+        android:layout_height="44dp"
+        android:text="@string/spaceregistration"
+        android:textSize="24sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="107dp" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="121dp"
+        android:layout_height="50dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/regionE"
+        android:inputType="text"
+        tools:ignore="MissingConstraints,TextFields"
+        tools:layout_editor_absoluteX="183dp"
+        tools:layout_editor_absoluteY="203dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="49dp"
+        android:layout_height="48dp"
+        android:text="@string/region"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="205dp" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Registration"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="386dp" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="646dp" />
+
+    <EditText
+        android:id="@+id/editTextNumber2"
+        android:layout_width="129dp"
+        android:layout_height="53dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/Number"
+        android:inputType="number"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="192dp"
+        tools:layout_editor_absoluteY="279dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="90dp"
+        android:layout_height="53dp"
+        android:text="@string/regionnumber"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="93dp"
+        tools:layout_editor_absoluteY="287dp" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="162dp"
+        android:layout_height="48dp"
+        android:text="@string/cancel"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="528dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="328dp"
+        android:layout_height="34dp"
+        android:text="@string/cancelRN"
+        android:textSize="16sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="486dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/aptName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="아파트 이름"
+        android:inputType="textPersonName"
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="36dp" />
+
+    <EditText
+        android:id="@+id/adminPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="관리자 비밀번호"
+        android:inputType="textPassword"
+        tools:ignore="HardcodedText,MissingConstraints,TextContrastCheck"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="117dp" />
+
+    <EditText
+        android:id="@+id/residentPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="@string/residentPassword"
+        android:inputType="textPassword"
+        tools:ignore="MissingConstraints,TextContrastCheck"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="194dp" />
+
+    <LinearLayout
+        android:id="@+id/parkingAreaLayout"
+        android:layout_width="301dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/broder"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/addParkingArea"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="41dp">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/addapt"
+        android:layout_width="169dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="104dp"
+        android:text="@string/add"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="652dp" />
+
+    <LinearLayout
+        android:id="@+id/doubleParkingLayout"
+        android:layout_width="299dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/broder"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/addDoubleParking"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="44dp">
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="278dp"
+        android:layout_height="21dp"
+        android:background="@android:color/transparent"
+        android:text="@string/addregion"
+        android:textColor="#808080"
+        android:textStyle="italic"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="273dp" />
+
+    <Button
+        android:id="@+id/addParkingArea"
+        android:layout_width="147dp"
+        android:layout_height="39dp"
+        android:text="@string/addParkingArea"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="196dp"
+        tools:layout_editor_absoluteY="403dp" />
+
+    <Button
+        android:id="@+id/addDoubleParking"
+        android:layout_width="163dp"
+        android:layout_height="39dp"
+        android:text="2중 주차 구역 추가"
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteX="180dp"
+        tools:layout_editor_absoluteY="540dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

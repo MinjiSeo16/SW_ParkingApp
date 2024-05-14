@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="189dp"
+        android:layout_height="49dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/이름"
+        android:inputType="text"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="211dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="235dp"
+        android:layout_height="43dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="@string/비밀번호"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="334dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="239dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:hint="@string/전화번호"
+        android:inputType="phone"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="438dp" />
+
+    <CheckBox
+        android:id="@+id/residentbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/주민"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="115dp"
+        tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        android:id="@+id/adminbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/관리자"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="194dp"
+        tools:layout_editor_absoluteY="115dp" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="121dp"
+        android:layout_height="52dp"
+        android:text="@string/가입하기"
+        tools:layout_editor_absoluteX="145dp"
+        tools:layout_editor_absoluteY="561dp"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
