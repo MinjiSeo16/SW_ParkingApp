@@ -13,7 +13,7 @@ public class Residentscreen extends AppCompatActivity {
     Button DoubleviewParkingButton;
     Button DoubleRCButton;
     Button ViewdoubleUserInfoButton;
-    long aptId = getIntent().getLongExtra("apt",-1);
+    long aptId =-1;
     String phoneNumber = getIntent().getStringExtra("phoneNumber");
 
     @Override
@@ -27,6 +27,7 @@ public class Residentscreen extends AppCompatActivity {
         ViewdoubleUserInfoButton = findViewById(R.id.button3);
         DoubleviewParkingButton = findViewById(R.id.button4);
         DoubleRCButton = findViewById(R.id.button5);
+        aptId = getIntent().getLongExtra("apt",-1);
 
         viewParkingStatusButton.setOnClickListener(v -> {
             // 주차 공간 조회 화면으로 이동

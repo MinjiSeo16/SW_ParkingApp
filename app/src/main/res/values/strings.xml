@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Parking app</string>
     <string name="Add_Apartment">Button</string>
     <string name="residentPassword">주민 비밀번호</string>
@@ -49,7 +49,6 @@
     <string name="Region">구역</string>
     <string name="siteNumdouble">자리번호</string>
     <string name="RegionAl">구역의 알파벳</string>
-    <string name="siteNumdouble">주차자리번호</string>
     <string name="DPR">주차등록</string>
     <string name="cancelrightnow">등록취소 바로가기</string>
     <string name="bak">뒤로가기</string>
@@ -62,4 +61,12 @@
     <string name="backtwo">뒤로가기</string>
     <string name="뒤로가기">뒤로가기</string>
     <string name="Backgo">뒤로가기</string>
+    <string name="_2">2중 주차 구역 추가</string>
+    <string name="addparkingareabutton">주차 구역 추가</string>
+    <string name="adminpassword">관리자 비밀번호</string>
+    <string name="aptName">아파트 이름</string>
+    <string name="residentpassword">주민 비밀번호</string>
+    <string name="Back">뒤로가기</string>
+    <string name="Backbutton">뒤로가기</string>
+    <string name="아파트이름">아파트이름\n</string>
 </resources>

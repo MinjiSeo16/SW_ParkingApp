@@ -37,6 +37,11 @@ public class Add_Apartment extends AppCompatActivity {
         Button addParkingAreaButton = findViewById(R.id.addParkingArea);
         Button addDoubleParkingButton = findViewById(R.id.addDoubleParking);
         Button addaptButton = findViewById(R.id.addapt);
+        Button BackButton = findViewById(R.id.button17);
+
+        BackButton.setOnClickListener(v->{
+            finish();
+        });
 
         addParkingAreaButton.setOnClickListener(v -> {
             // 주차 가능 구역 추가
@@ -46,13 +51,11 @@ public class Add_Apartment extends AppCompatActivity {
 
         addDoubleParkingButton.setOnClickListener(v -> {
             // 2중 주차 구역 추가
-            EditText newDoubleParkingAreaInput = createEditText("2중 주차 구역명 - 2중 주차 가능 수");
-            EditText newDoubleParkingTimeInput = createEditText("2중 주차 가능 시간 (예: 10:00 - 12:00)");
+            EditText newDoubleParkingAreaInput = createEditText("2중 주차 구역명 - 2중 주차 가능 수 - 2중 주차 가능 시간 (예: 10:00 - 12:00)");
 
             LinearLayout doubleParkingItemLayout = new LinearLayout(this);
             doubleParkingItemLayout.setOrientation(LinearLayout.VERTICAL);
             doubleParkingItemLayout.addView(newDoubleParkingAreaInput);
-            doubleParkingItemLayout.addView(newDoubleParkingTimeInput);
 
             doubleParkingLayout.addView(doubleParkingItemLayout);
         });
@@ -74,7 +77,7 @@ public class Add_Apartment extends AppCompatActivity {
             // 아파트 정보와 주차 구역 정보, 2중 주차 정보 저장 -> 고정데이터베이스에
             saveApartmentInfo(aptName, adminPassword, residentPassword, parkingAreaInfo, doubleParkingInfo);
             Toast.makeText(Add_Apartment.this, "아파트가 등록되었습니다.", Toast.LENGTH_SHORT).show();
-            finish(); // 메인 화면으로 돌아감
+            finish();
         });
     }
 
@@ -92,9 +95,12 @@ public class Add_Apartment extends AppCompatActivity {
         List<String> inputs = new ArrayList<>();
         for (int i = 0; i < layout.getChildCount(); i++) {
             View child = layout.getChildAt(i);
+
             if (child instanceof EditText) {
-                String inputText = ((EditText) child).getText().toString().trim();
-                if (!TextUtils.isEmpty(inputText)) {
+                EditText editText = (EditText) child;
+                String inputText = editText.getText().toString().trim();
+
+                if (!inputText.isEmpty()) {
                     inputs.add(inputText);
                 }
             }
@@ -108,15 +114,18 @@ public class Add_Apartment extends AppCompatActivity {
             View child = layout.getChildAt(i);
             if (child instanceof LinearLayout) {
                 LinearLayout doubleParkingItemLayout = (LinearLayout) child;
-                String areaName = ((EditText) doubleParkingItemLayout.getChildAt(0)).getText().toString().trim();
-                String capacity = ((EditText) doubleParkingItemLayout.getChildAt(1)).getText().toString().trim();
-                String time = ((EditText) doubleParkingItemLayout.getChildAt(2)).getText().toString().trim(); // 시간 입력란을 추가하여 시간 정보 가져오기
 
-                if (!TextUtils.isEmpty(areaName) && !TextUtils.isEmpty(capacity)) {
-                    String doubleParkingInfo = areaName + " - 2중 주차 가능 수: " + capacity;
-                    if (!TextUtils.isEmpty(time)) {
-                        doubleParkingInfo += " - 시간: " + time;
-                    }
+                EditText areaNameEditText = (EditText) doubleParkingItemLayout.getChildAt(0);
+                EditText capacityEditText = (EditText) doubleParkingItemLayout.getChildAt(1);
+                EditText timeEditText = (EditText) doubleParkingItemLayout.getChildAt(2);
+
+                if (areaNameEditText != null && capacityEditText != null && timeEditText != null) {
+                    String areaName = areaNameEditText.getText().toString().trim();
+                    String capacity = capacityEditText.getText().toString().trim();
+                    String time = timeEditText.getText().toString().trim();
+
+                    // 각 정보를 하나의 문자열로 항목별로 저장
+                    String doubleParkingInfo = areaName + " - " + capacity + " - " + time;
                     doubleParkingInputs.add(doubleParkingInfo);
                 }
             }
@@ -126,26 +135,44 @@ public class Add_Apartment extends AppCompatActivity {
 
     public void saveApartmentInfo(String aptName, String adminPassword, String residentPassword,
                                   List<String> parkingAreaInfo, List<String> doubleParkingInfo) {
-        SQLiteDatabase database = dbHelper.getWritableDatabase();
 
+        SQLiteDatabase database = dbHelper.getWritableDatabase();
         ContentValues aptValue = new ContentValues();
         aptValue.put("apt_name", aptName);
         aptValue.put("admin_password", adminPassword);
         aptValue.put("resident_password", residentPassword);
-
         long aptId = database.insert("apartments", null, aptValue);
 
         for (String parkingArea : parkingAreaInfo) {
+            String[] parts = parkingArea.split(" - ");
+            String areaName = null;
+            String capacity = null;
+            if (parts.length >= 2) {
+                areaName = parts[0].trim();
+                capacity = parts[1].trim();
+            }
             ContentValues parkingValues = new ContentValues();
             parkingValues.put("apt_id", aptId);
-            parkingValues.put("parking_info", parkingArea);
+            parkingValues.put("area_name", areaName);
+            parkingValues.put("capacity", capacity);
             database.insert("parking_areas", null, parkingValues);
         }
 
         for (String doubleParking : doubleParkingInfo) {
+            String [] d_parts = doubleParking.split(" - ");
+            String d_areName = null;
+            String d_capacity = null;
+            String time = null;
+            if (d_parts.length >=3){
+                d_areName = d_parts[0].trim();
+                d_capacity = d_parts[1].trim();
+                time = d_parts[2].trim();
+            }
             ContentValues doubleParkingValues = new ContentValues();
             doubleParkingValues.put("apt_id", aptId);
-            doubleParkingValues.put("double_parking_info", doubleParking);
+            doubleParkingValues.put("area_name", d_areName);
+            doubleParkingValues.put("capacity", d_capacity);
+            doubleParkingValues.put("time_slot",time);
             database.insert("double_parking_areas", null, doubleParkingValues);
         }
 

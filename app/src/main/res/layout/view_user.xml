@@ -4,20 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".View_user_doubleparking">
+    tools:context=".View_user_parking">
 
     <TextView
         android:id="@+id/userInfoTextView2"
-        android:layout_width="364dp"
-        android:layout_height="672dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/button21"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="16dp"
         android:scrollbars="vertical"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
 
     <Button
         android:id="@+id/button21"
-        android:layout_width="117dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="27dp"
         android:text="@string/Backgo" />
 
 </RelativeLayout>

@@ -11,7 +11,7 @@ import java.util.Calendar;
 public class AdminScreen extends AppCompatActivity {
     private DatabaseHelper databaseHelper;
     private Handler handler;
-    long aptId = getIntent().getLongExtra("aptId",-1);
+    long aptId = -1;
     Button doubleParkingCheckButton;
     Button viewtwoResidentsButton;
 
@@ -25,6 +25,7 @@ public class AdminScreen extends AppCompatActivity {
         viewtwoResidentsButton = findViewById(R.id.button16);
         Button parkingCheckButton = findViewById(R.id.ParkingCheck);
         doubleParkingCheckButton = findViewById(R.id.DoubleParkingCheck);
+        aptId = getIntent().getLongExtra("aptId",-1);
 
         viewResidentsButton.setOnClickListener(v -> {
             // 일반주차 주민정보 화면으로 이동

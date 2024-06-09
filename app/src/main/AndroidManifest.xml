@@ -21,6 +21,52 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AdminScreen"
+                  android:exported="true">
+
+        </activity>
+        <activity android:name=".Residentscreen"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".DoubleParkingCheck"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".View_user_doubleparking"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".ParkingCheck"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".ParkingRegistration"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".DoubleParkingOut"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".DoubleParkingRegistration"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".ParkingOut"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".View_user_parking"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".Add_Apartment"/>
+        <activity android:name=".Membership"/>
+        <activity android:name=".Login"
+            android:exported="true">
+
+        </activity>
     </application>
 
 </manifest>

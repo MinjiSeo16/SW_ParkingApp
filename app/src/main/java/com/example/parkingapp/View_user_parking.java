@@ -25,7 +25,7 @@ public class View_user_parking extends AppCompatActivity {
 
         if (aptId != -1) {
             SQLiteDatabase db = dbHelper.getReadableDatabase();
-            // 아파트 ID에 해당하는 이중 주차 사용자 정보 조회
+            // 아파트 ID에 해당하는 주차 사용자 정보 조회
             Cursor cursor = db.rawQuery("SELECT * FROM ParkingUserInfo WHERE apt_id = ?", new String[]{String.valueOf(aptId)});
             TextView userInfoTextView = findViewById(R.id.userInfoTextView2);
 

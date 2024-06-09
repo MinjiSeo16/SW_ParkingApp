@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -15,7 +16,6 @@ public class Login extends AppCompatActivity {
     private EditText passwordInput;
     private EditText phoneNumberInput;
     private DatabaseHelper dbHelper;
-    DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +27,13 @@ public class Login extends AppCompatActivity {
         phoneNumberInput = findViewById(R.id.phone);
         Button loginButton = findViewById(R.id.login);
         loginButton.setOnClickListener(v -> login());
+        Button BackButton = findViewById(R.id.button19);
+        BackButton.setOnClickListener(v -> finish());
     }
     private void login() {
         String password = passwordInput.getText().toString().trim();
         String phoneNumber = phoneNumberInput.getText().toString().trim();
-        long aptId = databaseHelper.getAptIdByAdminInfo(phoneNumber, password);
+        long aptId = dbHelper.getAptIdByAdminInfo(phoneNumber, password);
 
         if (TextUtils.isEmpty(password) || TextUtils.isEmpty(phoneNumber)) {
             Toast.makeText(this, "비밀번호와 전화번호를 모두 입력하세요.", Toast.LENGTH_SHORT).show();
@@ -47,14 +49,12 @@ public class Login extends AppCompatActivity {
                 intent.putExtra("phoneNumber", phoneNumber);
                 startActivity(intent);
 
-
             } else {
                 Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Login.this, Residentscreen.class);
                 intent.putExtra("aptId", aptId);
                 startActivity(intent);
             }
-            finish();
         } else {
             Toast.makeText(this, "로그인 실패. 비밀번호 또는 전화번호를 다시 확인하세요.", Toast.LENGTH_SHORT).show();
         }
@@ -62,16 +62,28 @@ public class Login extends AppCompatActivity {
     }
     private boolean isValidUser(String password, String phoneNumber) {
         SQLiteDatabase database = dbHelper.getReadableDatabase();
-        Cursor cursor = database.query("residents", null, "resident_password=? AND phone_number=?", new String[]{password, phoneNumber}, null, null, null);
-        boolean isValid = cursor.getCount() > 0;
-        cursor.close();
-        return isValid;
+        Cursor cursor_r = database.query("residents", null, "password=? AND phone_number=?", new String[]{password, phoneNumber}, null, null, null);
+        Cursor cursor_a = database.query("admin", null, "password=? AND phone_number=?", new String[]{password, phoneNumber}, null, null, null);
+
+        if (cursor_r.getCount() > 0 || cursor_a.getCount() > 0){
+            cursor_a.close();
+            cursor_r.close();
+            Log.d("Login","isValidUser");
+            return true;
+        }
+        else{
+            cursor_a.close();
+            cursor_r.close();
+            Log.d("Login","is InValidUser");
+            return false;
+        }
     }
     private boolean isAdminUser(String password) {
         SQLiteDatabase database = dbHelper.getReadableDatabase();
-        Cursor cursor = database.query("admin", null, "admin_password=?", new String[]{password}, null, null, null);
+        Cursor cursor = database.query("admin", null, "password=?", new String[]{password}, null, null, null);
         boolean isAdmin = cursor.getCount() > 0;
         cursor.close();
+        Log.d("Login","isAdminUser or isresidentUser completed");
         return isAdmin;
     }
 }

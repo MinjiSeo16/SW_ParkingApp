@@ -3,107 +3,120 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/aptName"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:hint="아파트 이름"
+        android:layout_margin="16dp"
+        android:hint="@string/aptName"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
-        tools:ignore="HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="36dp" />
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/adminPassword"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:hint="관리자 비밀번호"
+        android:layout_margin="16dp"
+        android:hint="@string/adminpassword"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
-        tools:ignore="HardcodedText,MissingConstraints,TextContrastCheck"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="117dp" />
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aptName"
+        tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/residentPassword"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:hint="@string/residentPassword"
+        android:layout_margin="16dp"
+        android:hint="@string/residentpassword"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
-        tools:ignore="MissingConstraints,TextContrastCheck"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="194dp" />
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminPassword"
+        tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
 
     <LinearLayout
         android:id="@+id/parkingAreaLayout"
-        android:layout_width="301dp"
-        android:layout_height="75dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="170dp"
+        android:layout_height="268dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/broder"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/addParkingArea"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="41dp">
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/addapt"
-        android:layout_width="169dp"
-        android:layout_height="53dp"
-        android:layout_marginEnd="104dp"
-        android:text="@string/add"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="652dp" />
-
-    <LinearLayout
-        android:id="@+id/doubleParkingLayout"
-        android:layout_width="299dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/broder"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/addDoubleParking"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="44dp">
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="278dp"
-        android:layout_height="21dp"
-        android:background="@android:color/transparent"
-        android:text="@string/addregion"
-        android:textColor="#808080"
-        android:textStyle="italic"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="273dp" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/residentPassword" />
 
     <Button
         android:id="@+id/addParkingArea"
-        android:layout_width="147dp"
-        android:layout_height="39dp"
-        android:text="@string/addParkingArea"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="196dp"
-        tools:layout_editor_absoluteY="403dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/addparkingareabutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/parkingAreaLayout" />
+
+    <LinearLayout
+        android:id="@+id/doubleParkingLayout"
+        android:layout_width="190dp"
+        android:layout_height="272dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/broder"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/residentPassword" />
 
     <Button
         android:id="@+id/addDoubleParking"
-        android:layout_width="163dp"
-        android:layout_height="39dp"
-        android:text="2중 주차 구역 추가"
-        tools:ignore="HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="180dp"
-        tools:layout_editor_absoluteY="540dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.841"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/doubleParkingLayout" />
+
+    <Button
+        android:id="@+id/addapt"
+        android:layout_width="190dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addDoubleParking" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="664dp"
+        android:text="@string/Back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

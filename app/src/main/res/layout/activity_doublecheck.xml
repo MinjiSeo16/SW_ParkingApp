@@ -9,14 +9,15 @@
 
     <ListView
         android:id="@+id/parkingListView2"
-        android:layout_width="438dp"
-        android:layout_height="550dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:padding="16dp" />
 
     <Button
         android:id="@+id/뒤로가기2"
         android:layout_width="134dp"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:text="@string/backtwo" />
 
 </LinearLayout>

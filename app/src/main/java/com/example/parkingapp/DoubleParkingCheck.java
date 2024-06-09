@@ -39,7 +39,7 @@ public class DoubleParkingCheck extends AppCompatActivity {
         ParkingAreaDatabaseHelper dbHelper = new ParkingAreaDatabaseHelper(this);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        String query = "SELECT * FROM ParkingSpace WHERE apt_id = " + aptId;
+        String query = "SELECT * FROM DoubleParkingSpace WHERE apt_id = " + aptId;
         Cursor cursor = db.rawQuery(query, null);
 
         if (cursor != null && cursor.moveToFirst()) {
