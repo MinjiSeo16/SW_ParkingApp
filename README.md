@@ -9,18 +9,18 @@ WIMS는 아파트 주차 공간 부족 문제를 해결하고 주민과 관리�
 
 ### 📂 주요 문서 및 다이어그램
 
-#### 1. [개념 설계 (Conceptualization)](./path/to/Conceptualization.pdf)
+#### 1. [개념 설계 (Conceptualization)](https://raw.githubusercontent.com/MinjiSeo16/SW_ParkingApp/master/1.%20%5BConceptualization%5D.pdf)
   - 프로젝트 배경 및 목적
   - **System Context Diagram**
   - **Use Case List**
   - Glossary와 참고 문헌
 
-#### 2. [분석 (Analysis)](./path/to/Analysis.pdf)
+#### 2. [분석 (Analysis)](https://raw.githubusercontent.com/MinjiSeo16/SW_ParkingApp/master/2.%20%5BAnalysis%5D.pdf)
   - Use Case Diagram 및 세부 설명
   - **Domain Analysis**
   - **UI 프로토타입**
 
-#### 3. [디자인 (Design)](./path/to/Design.pdf)
+#### 3. [디자인 (Design)](https://raw.githubusercontent.com/MinjiSeo16/SW_ParkingApp/master/3.%20%5BDesign%5D.pdf)
   - **Class Diagram**
   - **Sequence Diagram**
   - **State Machine Diagram**
